@@ -19,6 +19,13 @@
 
         If TextBox1.Text = "MoveUp()" Then
 
+        ElseIf TextBox1.Text = "MoveDown()" Then
+
+        ElseIf TextBox1.Text = "MoveLeft()" Then
+
+        ElseIf TextBox1.Text = "MoveRight()" Then
+
+
         End If
     End Sub
 End Class
