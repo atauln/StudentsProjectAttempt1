@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Command_Btn = New System.Windows.Forms.Button()
@@ -31,8 +32,12 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Mission1Check = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Character, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -108,11 +113,36 @@ Partial Class Form1
         Me.ListBox1.Size = New System.Drawing.Size(120, 308)
         Me.ListBox1.TabIndex = 7
         '
+        'Label4
+        '
+        Me.Label4.Location = New System.Drawing.Point(7, 10)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(637, 33)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Mission 1 - Try out all of the controls. Get arranged with the environment."
+        '
+        'Mission1Check
+        '
+        Me.Mission1Check.Interval = 1000
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(350, 150)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(782, 453)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -126,6 +156,7 @@ Partial Class Form1
         Me.Text = "Form1"
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Character, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -139,4 +170,7 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Mission1Check As Timer
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

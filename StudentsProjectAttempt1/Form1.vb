@@ -1,6 +1,13 @@
 ﻿Public Class Form1
     Dim CharacterX = Nothing
     Dim CharacterY = Nothing
+
+    Dim MoveUpUsed = False
+    Dim MoveDownUsed = False
+    Dim MoveLeftUsed = False
+    Dim MoveRightUsed = False
+    Dim Mission1Enabled = True
+
     Sub RefreshCharacterLocation()
         CharacterX = Character.Location.X
         CharacterY = Character.Location.Y
@@ -37,22 +44,37 @@
             Character.Top -= 10
             ListBox1.Items.Add("MoveUp()")
             RefreshCharacterLocation()
+            MoveUpUsed = True
         ElseIf TextBox1.Text = "MoveDown()" Then
             Character.Top += 10
             ListBox1.Items.Add("MoveDown()")
             RefreshCharacterLocation()
+            MoveDownUsed = True
         ElseIf TextBox1.Text = "MoveLeft()" Then
             Character.Left -= 10
             ListBox1.Items.Add("MoveLeft()")
             RefreshCharacterLocation()
+            MoveLeftUsed = True
         ElseIf TextBox1.Text = "MoveRight()" Then
             Character.Left += 10
             ListBox1.Items.Add("MoveRight()")
             RefreshCharacterLocation()
+            MoveRightUsed = True
+        End If
+
+        If MoveRightUsed = True And MoveLeftUsed = True And MoveUpUsed = True And MoveDownUsed = True And Mission1Enabled = True Then
+            PictureBox1.Visible = True
+            Mission1Check.Enabled = True
+            Label4.Text = "Mission 2 - "
         End If
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         TextBox1.Text = ListBox1.SelectedItem.ToString()
+    End Sub
+
+    Private Sub Mission1Check_Tick(sender As Object, e As EventArgs) Handles Mission1Check.Tick
+        Mission1Check.Enabled = False
+        PictureBox1.Visible = False
     End Sub
 End Class
