@@ -1,4 +1,13 @@
 ﻿Public Class Form1
+    Dim CharacterX = Nothing
+    Dim CharacterY = Nothing
+    Sub RefreshCharacterLocation()
+        CharacterX = Character.Location.X
+        CharacterY = Character.Location.Y
+        Label2.Text = CharacterX
+        Label3.Text = 500 - CharacterY
+    End Sub
+
     Sub RefreshTextBox(f)
         TextBox1.Text = f
     End Sub
@@ -25,15 +34,25 @@
     Private Sub Command_Btn_Click(sender As Object, e As EventArgs) Handles Command_Btn.Click
 
         If TextBox1.Text = "MoveUp()" Then
-            PictureBox1.Top -= 10
+            Character.Top -= 10
+            ListBox1.Items.Add("MoveUp()")
+            RefreshCharacterLocation()
         ElseIf TextBox1.Text = "MoveDown()" Then
-            PictureBox1.Top += 10
+            Character.Top += 10
+            ListBox1.Items.Add("MoveDown()")
+            RefreshCharacterLocation()
         ElseIf TextBox1.Text = "MoveLeft()" Then
-            PictureBox1.Left -= 10
+            Character.Left -= 10
+            ListBox1.Items.Add("MoveLeft()")
+            RefreshCharacterLocation()
         ElseIf TextBox1.Text = "MoveRight()" Then
-            PictureBox1.Left += 10
-
+            Character.Left += 10
+            ListBox1.Items.Add("MoveRight()")
+            RefreshCharacterLocation()
         End If
     End Sub
 
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+        TextBox1.Text = ListBox1.SelectedItem.ToString()
+    End Sub
 End Class
