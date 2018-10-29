@@ -8,6 +8,8 @@
     Dim MoveRightUsed = False
     Dim Mission1Enabled = True
 
+    Dim NameofValue5 = ""
+
     Sub RefreshCharacterLocation()
         CharacterX = Character.Location.X
         CharacterY = Character.Location.Y
@@ -32,6 +34,9 @@
         ElseIf Value = 4 Then
             Label1.Text = "MoveRight() - Moves the character a certain amount of units right."
             RefreshTextBox("MoveRight()")
+        ElseIf Not (ListBox2.Items.ToString() = "") And Value = 5 Then
+            Label1.Text = NameofValue5
+            RefreshTextBox(NameofValue5)
         Else
             Label1.Text = ""
             RefreshTextBox("")
@@ -60,6 +65,8 @@
             ListBox1.Items.Add("MoveRight()")
             RefreshCharacterLocation()
             MoveRightUsed = True
+        ElseIf TextBox1.Text = NameofValue5 Then
+
         End If
 
         If MoveRightUsed = True And MoveLeftUsed = True And MoveUpUsed = True And MoveDownUsed = True And Mission1Enabled = True Then
@@ -76,5 +83,17 @@
     Private Sub Mission1Check_Tick(sender As Object, e As EventArgs) Handles Mission1Check.Tick
         Mission1Check.Enabled = False
         PictureBox1.Visible = False
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        ListBox1.Items.Clear()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ListBox2.Items.Add(TextBox2.Text)
+    End Sub
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
+        NameofValue5 = TextBox3.Text
     End Sub
 End Class
