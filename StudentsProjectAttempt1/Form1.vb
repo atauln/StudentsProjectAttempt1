@@ -65,8 +65,37 @@
             ListBox1.Items.Add("MoveRight()")
             RefreshCharacterLocation()
             MoveRightUsed = True
-        ElseIf TextBox1.Text = NameofValue5 Then
-
+        ElseIf TextBox1.Text = NameofValue5 And Not (NameofValue5 = "") And Not (ListBox2.Items.ToString() = "") Then
+            Dim Numberfor5 = 0
+            Dim Limitfor5 = ListBox2.Items.Count - 1
+            ListBox2.SelectedIndex = Numberfor5
+            While Numberfor5 <= Limitfor5
+                ListBox2.SelectedIndex = Numberfor5
+                If ListBox2.SelectedItem = "MoveUp()" Then
+                    Character.Top -= 10
+                    ListBox1.Items.Add("MoveUp()")
+                    RefreshCharacterLocation()
+                    MoveUpUsed = True
+                ElseIf ListBox2.SelectedItem = "MoveDown()" Then
+                    Character.Top += 10
+                    ListBox1.Items.Add("MoveDown()")
+                    RefreshCharacterLocation()
+                    MoveDownUsed = True
+                ElseIf ListBox2.SelectedItem = "MoveLeft()" Then
+                    Character.Left -= 10
+                    ListBox1.Items.Add("MoveLeft()")
+                    RefreshCharacterLocation()
+                    MoveLeftUsed = True
+                ElseIf ListBox2.SelectedItem = "MoveRight()" Then
+                    Character.Left += 10
+                    ListBox1.Items.Add("MoveRight()")
+                    RefreshCharacterLocation()
+                    MoveRightUsed = True
+                ElseIf Numberfor5 <= Limitfor5 Then
+                    Exit While
+                End If
+                Numberfor5 += 1
+            End While
         End If
 
         If MoveRightUsed = True And MoveLeftUsed = True And MoveUpUsed = True And MoveDownUsed = True And Mission1Enabled = True Then
