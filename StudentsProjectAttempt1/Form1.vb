@@ -8,7 +8,7 @@
     Dim MoveRightUsed = False
     Dim Mission1Enabled = True
     Dim Mission1Done = False
-    
+
     Dim MissionMakerPod1Used = False
     Dim MissionMakerPod2Used = False
     Dim Mission2Enabled = False
@@ -23,8 +23,8 @@
         Label2.Text = CharacterX
         Label3.Text = 500 - CharacterY
     End Sub
-    
-    Sub MissionComplete
+
+    Sub MissionComplete()
         PictureBox1.Visible = True
         Mission1Check.Enabled = True
     End Sub
@@ -108,6 +108,7 @@
                 Numberfor5 += 1
             End While
             ListBox1.Items.Add(NameofValue5)
+            MissionMakerPod1Used = True
         ElseIf TextBox1.Text = NameofValue6 And Not (NameofValue6 = "") And Not (ListBox3.Items.ToString() = "") Then
             Dim Numberfor6 = 0
             Dim Limitfor6 = ListBox3.Items.Count - 1
@@ -136,19 +137,21 @@
                 Numberfor6 += 1
             End While
             ListBox1.Items.Add(NameofValue6)
+            MissionMakerPod2Used = True
         End If
 
         If MoveRightUsed = True And MoveLeftUsed = True And MoveUpUsed = True And MoveDownUsed = True And Mission1Enabled = True And Mission1Done = False Then
             MissionComplete()
             Mission1Done = True
-            Label4.Text = "Mission 2 - "
+            Label4.Text = "Mission 2 - Use Pod 1 in the MissionMaker tab."
         End If
-                
+
         If Mission2Done = False And MissionMakerPod1Used = True Then
-                    MissionComplete()
-                    Mission2Done = True
+            MissionComplete()
+            Mission2Done = True
+            Label4.Text = "Mission 3 -"
         End If
-                
+
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
@@ -183,4 +186,5 @@
     Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
         NameofValue6 = TextBox4.Text
     End Sub
+
 End Class
