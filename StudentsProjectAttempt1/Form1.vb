@@ -8,6 +8,11 @@
     Dim MoveRightUsed = False
     Dim Mission1Enabled = True
     Dim Mission1Done = False
+    
+    Dim MissionMakerPod1Used = False
+    Dim MissionMakerPod2Used = False
+    Dim Mission2Enabled = False
+    Dim Mission2Done = False
 
     Dim NameofValue5 = ""
     Dim NameofValue6 = ""
@@ -17,6 +22,11 @@
         CharacterY = Character.Location.Y
         Label2.Text = CharacterX
         Label3.Text = 500 - CharacterY
+    End Sub
+    
+    Sub MissionComplete
+        PictureBox1.Visible = True
+        Mission1Check.Enabled = True
     End Sub
 
     Sub RefreshTextBox(f)
@@ -129,11 +139,16 @@
         End If
 
         If MoveRightUsed = True And MoveLeftUsed = True And MoveUpUsed = True And MoveDownUsed = True And Mission1Enabled = True And Mission1Done = False Then
-            PictureBox1.Visible = True
-            Mission1Check.Enabled = True
+            MissionComplete()
             Mission1Done = True
             Label4.Text = "Mission 2 - "
         End If
+                
+        If Mission2Done = False And MissionMakerPod1Used = True Then
+                    MissionComplete()
+                    Mission2Done = True
+        End If
+                
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
