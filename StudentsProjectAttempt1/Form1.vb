@@ -143,12 +143,15 @@
         If MoveRightUsed = True And MoveLeftUsed = True And MoveUpUsed = True And MoveDownUsed = True And Mission1Enabled = True And Mission1Done = False Then
             MissionComplete()
             Mission1Done = True
+            Mission1Enabled = False
+            Mission2Enabled = True
             Label4.Text = "Mission 2 - Use Pod 1 in the MissionMaker tab."
         End If
 
         If Mission2Done = False And MissionMakerPod1Used = True Then
             MissionComplete()
             Mission2Done = True
+            Mission2Enabled = False
             Label4.Text = "Mission 3 -"
         End If
 
