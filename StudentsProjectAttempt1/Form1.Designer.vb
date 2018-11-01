@@ -38,22 +38,29 @@ Partial Class Form1
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Pod1 = New System.Windows.Forms.ListBox()
+        Me.NamePod1 = New System.Windows.Forms.TextBox()
+        Me.Pod2 = New System.Windows.Forms.ListBox()
+        Me.TextPod1 = New System.Windows.Forms.TextBox()
+        Me.TextPod2 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.NamePod2 = New System.Windows.Forms.TextBox()
+        Me.btnAddPod1 = New System.Windows.Forms.Button()
+        Me.BtnAddPod2 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.lblQuestion1 = New System.Windows.Forms.Label()
+        Me.btnSubmit = New System.Windows.Forms.Button()
+        Me.btnClearSurv = New System.Windows.Forms.Button()
+        Me.Question1Response = New System.Windows.Forms.TextBox()
+        Me.fdPathLocationPicker = New System.Windows.Forms.OpenFileDialog()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -161,6 +168,7 @@ Partial Class Form1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
@@ -185,22 +193,22 @@ Partial Class Form1
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage1.Size = New System.Drawing.Size(578, 356)
+        Me.TabPage1.Size = New System.Drawing.Size(575, 354)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.ListBox3)
-        Me.TabPage2.Controls.Add(Me.TextBox4)
-        Me.TabPage2.Controls.Add(Me.ListBox2)
-        Me.TabPage2.Controls.Add(Me.TextBox5)
-        Me.TabPage2.Controls.Add(Me.TextBox2)
+        Me.TabPage2.Controls.Add(Me.Pod1)
+        Me.TabPage2.Controls.Add(Me.NamePod1)
+        Me.TabPage2.Controls.Add(Me.Pod2)
+        Me.TabPage2.Controls.Add(Me.TextPod1)
+        Me.TabPage2.Controls.Add(Me.TextPod2)
         Me.TabPage2.Controls.Add(Me.Button3)
-        Me.TabPage2.Controls.Add(Me.TextBox3)
-        Me.TabPage2.Controls.Add(Me.Button4)
-        Me.TabPage2.Controls.Add(Me.Button1)
+        Me.TabPage2.Controls.Add(Me.NamePod2)
+        Me.TabPage2.Controls.Add(Me.btnAddPod1)
+        Me.TabPage2.Controls.Add(Me.BtnAddPod2)
         Me.TabPage2.Controls.Add(Me.Button2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
@@ -211,13 +219,47 @@ Partial Class Form1
         Me.TabPage2.Text = "Mixed Maker"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'Pod1
         '
-        Me.TextBox4.Location = New System.Drawing.Point(34, 321)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(118, 20)
-        Me.TextBox4.TabIndex = 9
+        Me.Pod1.FormattingEnabled = True
+        Me.Pod1.Location = New System.Drawing.Point(34, 76)
+        Me.Pod1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Pod1.Name = "Pod1"
+        Me.Pod1.Size = New System.Drawing.Size(120, 212)
+        Me.Pod1.TabIndex = 5
+        '
+        'NamePod1
+        '
+        Me.NamePod1.Location = New System.Drawing.Point(34, 321)
+        Me.NamePod1.Margin = New System.Windows.Forms.Padding(2)
+        Me.NamePod1.Name = "NamePod1"
+        Me.NamePod1.Size = New System.Drawing.Size(118, 20)
+        Me.NamePod1.TabIndex = 9
+        '
+        'Pod2
+        '
+        Me.Pod2.FormattingEnabled = True
+        Me.Pod2.Location = New System.Drawing.Point(186, 76)
+        Me.Pod2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Pod2.Name = "Pod2"
+        Me.Pod2.Size = New System.Drawing.Size(120, 212)
+        Me.Pod2.TabIndex = 0
+        '
+        'TextPod1
+        '
+        Me.TextPod1.Location = New System.Drawing.Point(34, 19)
+        Me.TextPod1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextPod1.Name = "TextPod1"
+        Me.TextPod1.Size = New System.Drawing.Size(120, 20)
+        Me.TextPod1.TabIndex = 6
+        '
+        'TextPod2
+        '
+        Me.TextPod2.Location = New System.Drawing.Point(186, 19)
+        Me.TextPod2.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextPod2.Name = "TextPod2"
+        Me.TextPod2.Size = New System.Drawing.Size(120, 20)
+        Me.TextPod2.TabIndex = 1
         '
         'Button3
         '
@@ -229,40 +271,33 @@ Partial Class Form1
         Me.Button3.Text = "Clear"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Button4
+        'NamePod2
         '
-        Me.Button4.Location = New System.Drawing.Point(34, 45)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(118, 24)
-        Me.Button4.TabIndex = 7
-        Me.Button4.Text = "Add"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.NamePod2.Location = New System.Drawing.Point(186, 321)
+        Me.NamePod2.Margin = New System.Windows.Forms.Padding(2)
+        Me.NamePod2.Name = "NamePod2"
+        Me.NamePod2.Size = New System.Drawing.Size(118, 20)
+        Me.NamePod2.TabIndex = 4
         '
-        'TextBox5
+        'btnAddPod1
         '
-        Me.TextBox5.Location = New System.Drawing.Point(34, 19)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(120, 20)
-        Me.TextBox5.TabIndex = 6
+        Me.btnAddPod1.Location = New System.Drawing.Point(34, 45)
+        Me.btnAddPod1.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAddPod1.Name = "btnAddPod1"
+        Me.btnAddPod1.Size = New System.Drawing.Size(118, 24)
+        Me.btnAddPod1.TabIndex = 7
+        Me.btnAddPod1.Text = "Add"
+        Me.btnAddPod1.UseVisualStyleBackColor = True
         '
-        'ListBox3
+        'BtnAddPod2
         '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(34, 76)
-        Me.ListBox3.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(120, 212)
-        Me.ListBox3.TabIndex = 5
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(186, 321)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(118, 20)
-        Me.TextBox3.TabIndex = 4
+        Me.BtnAddPod2.Location = New System.Drawing.Point(186, 45)
+        Me.BtnAddPod2.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnAddPod2.Name = "BtnAddPod2"
+        Me.BtnAddPod2.Size = New System.Drawing.Size(118, 24)
+        Me.BtnAddPod2.TabIndex = 2
+        Me.BtnAddPod2.Text = "Add"
+        Me.BtnAddPod2.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -274,32 +309,55 @@ Partial Class Form1
         Me.Button2.Text = "Clear"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button1
+        'TabPage3
         '
-        Me.Button1.Location = New System.Drawing.Point(186, 45)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(118, 24)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Add"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TabPage3.Controls.Add(Me.Question1Response)
+        Me.TabPage3.Controls.Add(Me.lblQuestion1)
+        Me.TabPage3.Controls.Add(Me.btnSubmit)
+        Me.TabPage3.Controls.Add(Me.btnClearSurv)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(575, 354)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Survey"
+        Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'lblQuestion1
         '
-        Me.TextBox2.Location = New System.Drawing.Point(186, 19)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(120, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.lblQuestion1.Location = New System.Drawing.Point(16, 51)
+        Me.lblQuestion1.Name = "lblQuestion1"
+        Me.lblQuestion1.Size = New System.Drawing.Size(546, 19)
+        Me.lblQuestion1.TabIndex = 3
+        Me.lblQuestion1.Text = "How well do you think that this program helped you?"
         '
-        'ListBox2
+        'btnSubmit
         '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(186, 76)
-        Me.ListBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(120, 212)
-        Me.ListBox2.TabIndex = 0
+        Me.btnSubmit.Location = New System.Drawing.Point(284, 321)
+        Me.btnSubmit.Name = "btnSubmit"
+        Me.btnSubmit.Size = New System.Drawing.Size(150, 33)
+        Me.btnSubmit.TabIndex = 2
+        Me.btnSubmit.Text = "Submit"
+        Me.btnSubmit.UseVisualStyleBackColor = True
+        '
+        'btnClearSurv
+        '
+        Me.btnClearSurv.Location = New System.Drawing.Point(128, 321)
+        Me.btnClearSurv.Name = "btnClearSurv"
+        Me.btnClearSurv.Size = New System.Drawing.Size(150, 33)
+        Me.btnClearSurv.TabIndex = 1
+        Me.btnClearSurv.Text = "Clear Survey"
+        Me.btnClearSurv.UseVisualStyleBackColor = True
+        '
+        'Question1Response
+        '
+        Me.Question1Response.Location = New System.Drawing.Point(19, 73)
+        Me.Question1Response.Name = "Question1Response"
+        Me.Question1Response.Size = New System.Drawing.Size(100, 20)
+        Me.Question1Response.TabIndex = 4
+        '
+        'fdPathLocationPicker
+        '
+        Me.fdPathLocationPicker.FileName = "OpenFileDialog1"
         '
         'Form1
         '
@@ -318,6 +376,8 @@ Partial Class Form1
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -337,13 +397,19 @@ Partial Class Form1
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents ListBox2 As ListBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents BtnAddPod2 As Button
+    Friend WithEvents TextPod2 As TextBox
+    Friend WithEvents Pod2 As ListBox
+    Friend WithEvents NamePod2 As TextBox
+    Friend WithEvents NamePod1 As TextBox
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents btnAddPod1 As Button
+    Friend WithEvents TextPod1 As TextBox
+    Friend WithEvents Pod1 As ListBox
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents btnClearSurv As Button
+    Friend WithEvents btnSubmit As Button
+    Friend WithEvents lblQuestion1 As Label
+    Friend WithEvents Question1Response As TextBox
+    Friend WithEvents fdPathLocationPicker As OpenFileDialog
 End Class

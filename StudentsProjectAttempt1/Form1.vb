@@ -46,10 +46,10 @@
         ElseIf Value = 4 Then
             Label1.Text = "MoveRight() - Moves the character a certain amount of units right."
             RefreshTextBox("MoveRight()")
-        ElseIf Not (ListBox2.Items.ToString() = "") And Value = 5 Then
+        ElseIf Not (Pod2.Items.ToString() = "") And Value = 5 Then
             Label1.Text = NameofValue5
             RefreshTextBox(NameofValue5)
-        ElseIf Not (ListBox3.Items.ToString() = "") And Value = 6 Then
+        ElseIf Not (Pod1.Items.ToString() = "") And Value = 6 Then
             Label1.Text = NameofValue6
             RefreshTextBox(NameofValue6)
         Else
@@ -80,25 +80,25 @@
             ListBox1.Items.Add("MoveRight()")
             RefreshCharacterLocation()
             MoveRightUsed = True
-        ElseIf TextBox1.Text = NameofValue5 And Not (NameofValue5 = "") And Not (ListBox2.Items.ToString() = "") Then
+        ElseIf TextBox1.Text = NameofValue5 And Not (NameofValue5 = "") And Not (Pod2.Items.ToString() = "") Then
             Dim Numberfor5 = 0
-            Dim Limitfor5 = ListBox2.Items.Count - 1
-            ListBox2.SelectedIndex = Numberfor5
+            Dim Limitfor5 = Pod2.Items.Count - 1
+            Pod2.SelectedIndex = Numberfor5
             While Numberfor5 <= Limitfor5
-                ListBox2.SelectedIndex = Numberfor5
-                If ListBox2.SelectedItem = "MoveUp()" Then
+                Pod2.SelectedIndex = Numberfor5
+                If Pod2.SelectedItem = "MoveUp()" Then
                     Character.Top -= 10
                     RefreshCharacterLocation()
                     MoveUpUsed = True
-                ElseIf ListBox2.SelectedItem = "MoveDown()" Then
+                ElseIf Pod2.SelectedItem = "MoveDown()" Then
                     Character.Top += 10
                     RefreshCharacterLocation()
                     MoveDownUsed = True
-                ElseIf ListBox2.SelectedItem = "MoveLeft()" Then
+                ElseIf Pod2.SelectedItem = "MoveLeft()" Then
                     Character.Left -= 10
                     RefreshCharacterLocation()
                     MoveLeftUsed = True
-                ElseIf ListBox2.SelectedItem = "MoveRight()" Then
+                ElseIf Pod2.SelectedItem = "MoveRight()" Then
                     Character.Left += 10
                     RefreshCharacterLocation()
                     MoveRightUsed = True
@@ -109,25 +109,25 @@
             End While
             ListBox1.Items.Add(NameofValue5)
             MissionMakerPod1Used = True
-        ElseIf TextBox1.Text = NameofValue6 And Not (NameofValue6 = "") And Not (ListBox3.Items.ToString() = "") Then
+        ElseIf TextBox1.Text = NameofValue6 And Not (NameofValue6 = "") And Not (Pod1.Items.ToString() = "") Then
             Dim Numberfor6 = 0
-            Dim Limitfor6 = ListBox3.Items.Count - 1
-            ListBox3.SelectedIndex = Numberfor6
+            Dim Limitfor6 = Pod1.Items.Count - 1
+            Pod1.SelectedIndex = Numberfor6
             While Numberfor6 <= Limitfor6
-                ListBox3.SelectedIndex = Numberfor6
-                If ListBox3.SelectedItem = "MoveUp()" Then
+                Pod1.SelectedIndex = Numberfor6
+                If Pod1.SelectedItem = "MoveUp()" Then
                     Character.Top -= 10
                     RefreshCharacterLocation()
                     MoveUpUsed = True
-                ElseIf ListBox3.SelectedItem = "MoveDown()" Then
+                ElseIf Pod1.SelectedItem = "MoveDown()" Then
                     Character.Top += 10
                     RefreshCharacterLocation()
                     MoveDownUsed = True
-                ElseIf ListBox3.SelectedItem = "MoveLeft()" Then
+                ElseIf Pod1.SelectedItem = "MoveLeft()" Then
                     Character.Left -= 10
                     RefreshCharacterLocation()
                     MoveLeftUsed = True
-                ElseIf ListBox3.SelectedItem = "MoveRight()" Then
+                ElseIf Pod1.SelectedItem = "MoveRight()" Then
                     Character.Left += 10
                     RefreshCharacterLocation()
                     MoveRightUsed = True
@@ -170,24 +170,31 @@
         ListBox1.SelectedItem.Clear()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ListBox2.Items.Add(TextBox2.Text)
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnAddPod2.Click
+        Pod2.Items.Add(TextPod2.Text)
     End Sub
 
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
-        NameofValue5 = TextBox3.Text
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles NamePod2.TextChanged
+        NameofValue5 = NamePod2.Text
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        ListBox3.Items.Add(TextBox5.Text)
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnAddPod1.Click
+        Pod1.Items.Add(TextPod1.Text)
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        ListBox3.SelectedItem.Clear()
+        Pod1.SelectedItem.Clear()
     End Sub
 
-    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
-        NameofValue6 = TextBox4.Text
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles NamePod1.TextChanged
+        NameofValue6 = NamePod1.Text
     End Sub
 
+    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+        Dim PathLocation =
+        Dim fso = CreateObject("Scripting.FileSystemObject")
+        Dim TxtFile = fso.OpenTextFile(PathLocation)
+        TxtFile.WriteLine(lblQuestion1.Text)
+        TxtFile.WriteLine(Question1Response.Text)
+    End Sub
 End Class
