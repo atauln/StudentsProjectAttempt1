@@ -191,10 +191,17 @@
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
-        Dim PathLocation =
+        Dim PathLocation = Nothing
+        fdPathLocationPicker.ShowDialog()
+
+        PathLocation = fdPathLocationPicker.FileName
+
         Dim fso = CreateObject("Scripting.FileSystemObject")
-        Dim TxtFile = fso.OpenTextFile(PathLocation)
+        Dim TxtFile = fso.OpenTextFile(PathLocation.ToString, 2, True)
+        TxtFile.WriteLine(txtNameInput.Text)
         TxtFile.WriteLine(lblQuestion1.Text)
         TxtFile.WriteLine(Question1Response.Text)
+        TxtFile.WriteLine(Question2.Text)
+        TxtFile.WriteLine(txtQuestion2.Text)
     End Sub
 End Class

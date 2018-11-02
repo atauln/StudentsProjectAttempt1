@@ -49,11 +49,15 @@ Partial Class Form1
         Me.BtnAddPod2 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Question1Response = New System.Windows.Forms.TextBox()
         Me.lblQuestion1 = New System.Windows.Forms.Label()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.btnClearSurv = New System.Windows.Forms.Button()
-        Me.Question1Response = New System.Windows.Forms.TextBox()
         Me.fdPathLocationPicker = New System.Windows.Forms.OpenFileDialog()
+        Me.Question2 = New System.Windows.Forms.Label()
+        Me.txtQuestion2 = New System.Windows.Forms.TextBox()
+        Me.txtNameInput = New System.Windows.Forms.TextBox()
+        Me.lblNameQ = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -311,6 +315,10 @@ Partial Class Form1
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.txtNameInput)
+        Me.TabPage3.Controls.Add(Me.lblNameQ)
+        Me.TabPage3.Controls.Add(Me.txtQuestion2)
+        Me.TabPage3.Controls.Add(Me.Question2)
         Me.TabPage3.Controls.Add(Me.Question1Response)
         Me.TabPage3.Controls.Add(Me.lblQuestion1)
         Me.TabPage3.Controls.Add(Me.btnSubmit)
@@ -321,6 +329,13 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Survey"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Question1Response
+        '
+        Me.Question1Response.Location = New System.Drawing.Point(19, 73)
+        Me.Question1Response.Name = "Question1Response"
+        Me.Question1Response.Size = New System.Drawing.Size(100, 20)
+        Me.Question1Response.TabIndex = 4
         '
         'lblQuestion1
         '
@@ -348,16 +363,39 @@ Partial Class Form1
         Me.btnClearSurv.Text = "Clear Survey"
         Me.btnClearSurv.UseVisualStyleBackColor = True
         '
-        'Question1Response
-        '
-        Me.Question1Response.Location = New System.Drawing.Point(19, 73)
-        Me.Question1Response.Name = "Question1Response"
-        Me.Question1Response.Size = New System.Drawing.Size(100, 20)
-        Me.Question1Response.TabIndex = 4
-        '
         'fdPathLocationPicker
         '
         Me.fdPathLocationPicker.FileName = "OpenFileDialog1"
+        '
+        'Question2
+        '
+        Me.Question2.Location = New System.Drawing.Point(16, 105)
+        Me.Question2.Name = "Question2"
+        Me.Question2.Size = New System.Drawing.Size(546, 19)
+        Me.Question2.TabIndex = 5
+        Me.Question2.Text = "How well do you think that this program helped you?"
+        '
+        'txtQuestion2
+        '
+        Me.txtQuestion2.Location = New System.Drawing.Point(19, 127)
+        Me.txtQuestion2.Name = "txtQuestion2"
+        Me.txtQuestion2.Size = New System.Drawing.Size(100, 20)
+        Me.txtQuestion2.TabIndex = 6
+        '
+        'txtNameInput
+        '
+        Me.txtNameInput.Location = New System.Drawing.Point(19, 187)
+        Me.txtNameInput.Name = "txtNameInput"
+        Me.txtNameInput.Size = New System.Drawing.Size(100, 20)
+        Me.txtNameInput.TabIndex = 8
+        '
+        'lblNameQ
+        '
+        Me.lblNameQ.Location = New System.Drawing.Point(16, 165)
+        Me.lblNameQ.Name = "lblNameQ"
+        Me.lblNameQ.Size = New System.Drawing.Size(546, 19)
+        Me.lblNameQ.TabIndex = 7
+        Me.lblNameQ.Text = "What is your full name?"
         '
         'Form1
         '
@@ -412,4 +450,8 @@ Partial Class Form1
     Friend WithEvents lblQuestion1 As Label
     Friend WithEvents Question1Response As TextBox
     Friend WithEvents fdPathLocationPicker As OpenFileDialog
+    Friend WithEvents txtQuestion2 As TextBox
+    Friend WithEvents Question2 As Label
+    Friend WithEvents txtNameInput As TextBox
+    Friend WithEvents lblNameQ As Label
 End Class
