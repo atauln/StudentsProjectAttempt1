@@ -1,6 +1,7 @@
 ﻿Public Class Form1
     Dim CharacterX = Nothing
     Dim CharacterY = Nothing
+    Dim Steps = 10
 
     Dim MoveUpUsed = False
     Dim MoveDownUsed = False
@@ -13,6 +14,9 @@
     Dim MissionMakerPod2Used = False
     Dim Mission2Enabled = False
     Dim Mission2Done = False
+
+    Dim Mission3Enabled = False
+    Dim Mission3Done = False
 
     Dim NameofValue5 = ""
     Dim NameofValue6 = ""
@@ -35,16 +39,16 @@
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
         Dim Value = NumericUpDown1.Value
         If Value = 1 Then
-            Label1.Text = "MoveUp() - Moves the character a certain amount of units up."
+            Label1.Text = "MoveUp() - Moves the character " + Steps.ToString + " units up."
             RefreshTextBox("MoveUp()")
         ElseIf Value = 2 Then
-            Label1.Text = "MoveDown() - Moves the character a certain amount of units down."
+            Label1.Text = "MoveDown() - Moves the character " + Steps.ToString + " units down."
             RefreshTextBox("MoveDown()")
         ElseIf Value = 3 Then
-            Label1.Text = "MoveLeft() - Moves the character a certain amount of units left."
+            Label1.Text = "MoveLeft() - Moves the character " + Steps.ToString + " units left."
             RefreshTextBox("MoveLeft()")
         ElseIf Value = 4 Then
-            Label1.Text = "MoveRight() - Moves the character a certain amount of units right."
+            Label1.Text = "MoveRight() - Moves the character " + Steps.ToString + " units right."
             RefreshTextBox("MoveRight()")
         ElseIf Not (Pod2.Items.ToString() = "") And Value = 5 Then
             Label1.Text = NameofValue5
@@ -61,22 +65,22 @@
     Private Sub Command_Btn_Click(sender As Object, e As EventArgs) Handles Command_Btn.Click
 
         If TextBox1.Text = "MoveUp()" Then
-            Character.Top -= 10
+            Character.Top -= Steps
             ListBox1.Items.Add("MoveUp()")
             RefreshCharacterLocation()
             MoveUpUsed = True
         ElseIf TextBox1.Text = "MoveDown()" Then
-            Character.Top += 10
+            Character.Top += Steps
             ListBox1.Items.Add("MoveDown()")
             RefreshCharacterLocation()
             MoveDownUsed = True
         ElseIf TextBox1.Text = "MoveLeft()" Then
-            Character.Left -= 10
+            Character.Left -= Steps
             ListBox1.Items.Add("MoveLeft()")
             RefreshCharacterLocation()
             MoveLeftUsed = True
         ElseIf TextBox1.Text = "MoveRight()" Then
-            Character.Left += 10
+            Character.Left += Steps
             ListBox1.Items.Add("MoveRight()")
             RefreshCharacterLocation()
             MoveRightUsed = True
@@ -87,19 +91,19 @@
             While Numberfor5 <= Limitfor5
                 Pod2.SelectedIndex = Numberfor5
                 If Pod2.SelectedItem = "MoveUp()" Then
-                    Character.Top -= 10
+                    Character.Top -= Steps
                     RefreshCharacterLocation()
                     MoveUpUsed = True
                 ElseIf Pod2.SelectedItem = "MoveDown()" Then
-                    Character.Top += 10
+                    Character.Top += Steps
                     RefreshCharacterLocation()
                     MoveDownUsed = True
                 ElseIf Pod2.SelectedItem = "MoveLeft()" Then
-                    Character.Left -= 10
+                    Character.Left -= Steps
                     RefreshCharacterLocation()
                     MoveLeftUsed = True
                 ElseIf Pod2.SelectedItem = "MoveRight()" Then
-                    Character.Left += 10
+                    Character.Left += Steps
                     RefreshCharacterLocation()
                     MoveRightUsed = True
                 ElseIf Numberfor5 <= Limitfor5 Then
@@ -116,19 +120,19 @@
             While Numberfor6 <= Limitfor6
                 Pod1.SelectedIndex = Numberfor6
                 If Pod1.SelectedItem = "MoveUp()" Then
-                    Character.Top -= 10
+                    Character.Top -= Steps
                     RefreshCharacterLocation()
                     MoveUpUsed = True
                 ElseIf Pod1.SelectedItem = "MoveDown()" Then
-                    Character.Top += 10
+                    Character.Top += Steps
                     RefreshCharacterLocation()
                     MoveDownUsed = True
                 ElseIf Pod1.SelectedItem = "MoveLeft()" Then
-                    Character.Left -= 10
+                    Character.Left -= Steps
                     RefreshCharacterLocation()
                     MoveLeftUsed = True
                 ElseIf Pod1.SelectedItem = "MoveRight()" Then
-                    Character.Left += 10
+                    Character.Left += Steps
                     RefreshCharacterLocation()
                     MoveRightUsed = True
                 ElseIf Numberfor6 <= Limitfor6 Then
@@ -152,7 +156,8 @@
             MissionComplete()
             Mission2Done = True
             Mission2Enabled = False
-            Label4.Text = "Mission 3 -"
+            Mission3Enabled = True
+            Label4.Text = "Mission 3 - "
         End If
 
     End Sub
@@ -190,18 +195,48 @@
         NameofValue6 = NamePod1.Text
     End Sub
 
-    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
-        Dim PathLocation = Nothing
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         fdPathLocationPicker.ShowDialog()
+        Character.ImageLocation = System.IO.Path.GetFullPath(fdPathLocationPicker.FileName)
+    End Sub
 
-        PathLocation = fdPathLocationPicker.FileName
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Character.Image = PictureBox2.Image
+    End Sub
 
-        Dim fso = CreateObject("Scripting.FileSystemObject")
-        Dim TxtFile = fso.OpenTextFile(PathLocation.ToString, 2, True)
-        TxtFile.WriteLine(txtNameInput.Text)
-        TxtFile.WriteLine(lblQuestion1.Text)
-        TxtFile.WriteLine(Question1Response.Text)
-        TxtFile.WriteLine(Question2.Text)
-        TxtFile.WriteLine(txtQuestion2.Text)
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Character.Image = PictureBox3.Image
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Character.Image = PictureBox4.Image
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        Character.Image = PictureBox5.Image
+    End Sub
+
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        Character.Image = PictureBox6.Image
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        Character.Image = PictureBox7.Image
+    End Sub
+
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
+        Character.Image = PictureBox8.Image
+    End Sub
+
+    Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
+        Character.Image = PictureBox9.Image
+    End Sub
+
+    Private Sub PictureBoxSteps_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
+        Character.Image = PictureBox10.Image
+    End Sub
+
+    Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
+        Character.Image = PictureBox11.Image
     End Sub
 End Class

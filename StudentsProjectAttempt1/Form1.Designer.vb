@@ -49,15 +49,22 @@ Partial Class Form1
         Me.BtnAddPod2 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Question1Response = New System.Windows.Forms.TextBox()
-        Me.lblQuestion1 = New System.Windows.Forms.Label()
-        Me.btnSubmit = New System.Windows.Forms.Button()
-        Me.btnClearSurv = New System.Windows.Forms.Button()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.fdPathLocationPicker = New System.Windows.Forms.OpenFileDialog()
-        Me.Question2 = New System.Windows.Forms.Label()
-        Me.txtQuestion2 = New System.Windows.Forms.TextBox()
-        Me.txtNameInput = New System.Windows.Forms.TextBox()
-        Me.lblNameQ = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,6 +72,19 @@ Partial Class Form1
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -148,7 +168,7 @@ Partial Class Form1
         Me.Label4.Location = New System.Drawing.Point(2, 3)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(478, 27)
+        Me.Label4.Size = New System.Drawing.Size(479, 27)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Mission 1 - Try out all of the controls. Get arranged with the environment."
         '
@@ -178,7 +198,7 @@ Partial Class Form1
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(583, 380)
+        Me.TabControl1.Size = New System.Drawing.Size(588, 383)
         Me.TabControl1.TabIndex = 10
         '
         'TabPage1
@@ -197,7 +217,7 @@ Partial Class Form1
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage1.Size = New System.Drawing.Size(575, 354)
+        Me.TabPage1.Size = New System.Drawing.Size(580, 357)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -218,7 +238,7 @@ Partial Class Form1
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Size = New System.Drawing.Size(575, 354)
+        Me.TabPage2.Size = New System.Drawing.Size(580, 357)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Mixed Maker"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -315,97 +335,187 @@ Partial Class Form1
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.txtNameInput)
-        Me.TabPage3.Controls.Add(Me.lblNameQ)
-        Me.TabPage3.Controls.Add(Me.txtQuestion2)
-        Me.TabPage3.Controls.Add(Me.Question2)
-        Me.TabPage3.Controls.Add(Me.Question1Response)
-        Me.TabPage3.Controls.Add(Me.lblQuestion1)
-        Me.TabPage3.Controls.Add(Me.btnSubmit)
-        Me.TabPage3.Controls.Add(Me.btnClearSurv)
+        Me.TabPage3.Controls.Add(Me.GroupBox2)
+        Me.TabPage3.Controls.Add(Me.LinkLabel1)
+        Me.TabPage3.Controls.Add(Me.GroupBox1)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(575, 354)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(580, 357)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Survey"
+        Me.TabPage3.Text = "Personalization"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'Question1Response
+        'LinkLabel1
         '
-        Me.Question1Response.Location = New System.Drawing.Point(19, 73)
-        Me.Question1Response.Name = "Question1Response"
-        Me.Question1Response.Size = New System.Drawing.Size(100, 20)
-        Me.Question1Response.TabIndex = 4
+        Me.LinkLabel1.Location = New System.Drawing.Point(8, 313)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(121, 18)
+        Me.LinkLabel1.TabIndex = 3
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Or choose your own..."
+        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblQuestion1
+        'GroupBox1
         '
-        Me.lblQuestion1.Location = New System.Drawing.Point(16, 51)
-        Me.lblQuestion1.Name = "lblQuestion1"
-        Me.lblQuestion1.Size = New System.Drawing.Size(546, 19)
-        Me.lblQuestion1.TabIndex = 3
-        Me.lblQuestion1.Text = "How well do you think that this program helped you?"
+        Me.GroupBox1.Controls.Add(Me.PictureBox11)
+        Me.GroupBox1.Controls.Add(Me.PictureBox10)
+        Me.GroupBox1.Controls.Add(Me.PictureBox9)
+        Me.GroupBox1.Controls.Add(Me.PictureBox8)
+        Me.GroupBox1.Controls.Add(Me.PictureBox7)
+        Me.GroupBox1.Controls.Add(Me.PictureBox6)
+        Me.GroupBox1.Controls.Add(Me.PictureBox5)
+        Me.GroupBox1.Controls.Add(Me.PictureBox4)
+        Me.GroupBox1.Controls.Add(Me.PictureBox3)
+        Me.GroupBox1.Controls.Add(Me.PictureBox2)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 6)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(121, 304)
+        Me.GroupBox1.TabIndex = 1
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Change Character"
         '
-        'btnSubmit
+        'PictureBox11
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(284, 321)
-        Me.btnSubmit.Name = "btnSubmit"
-        Me.btnSubmit.Size = New System.Drawing.Size(150, 33)
-        Me.btnSubmit.TabIndex = 2
-        Me.btnSubmit.Text = "Submit"
-        Me.btnSubmit.UseVisualStyleBackColor = True
+        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+        Me.PictureBox11.Location = New System.Drawing.Point(62, 243)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 9
+        Me.PictureBox11.TabStop = False
         '
-        'btnClearSurv
+        'PictureBox10
         '
-        Me.btnClearSurv.Location = New System.Drawing.Point(128, 321)
-        Me.btnClearSurv.Name = "btnClearSurv"
-        Me.btnClearSurv.Size = New System.Drawing.Size(150, 33)
-        Me.btnClearSurv.TabIndex = 1
-        Me.btnClearSurv.Text = "Clear Survey"
-        Me.btnClearSurv.UseVisualStyleBackColor = True
+        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
+        Me.PictureBox10.Location = New System.Drawing.Point(6, 243)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 8
+        Me.PictureBox10.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
+        Me.PictureBox9.Location = New System.Drawing.Point(62, 187)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 7
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+        Me.PictureBox8.Location = New System.Drawing.Point(6, 187)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 6
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(62, 131)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 5
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
+        Me.PictureBox6.Location = New System.Drawing.Point(6, 131)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 4
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(62, 75)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 3
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(6, 75)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 2
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(62, 19)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 1
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(6, 19)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
         '
         'fdPathLocationPicker
         '
         Me.fdPathLocationPicker.FileName = "OpenFileDialog1"
         '
-        'Question2
+        'GroupBox2
         '
-        Me.Question2.Location = New System.Drawing.Point(16, 105)
-        Me.Question2.Name = "Question2"
-        Me.Question2.Size = New System.Drawing.Size(546, 19)
-        Me.Question2.TabIndex = 5
-        Me.Question2.Text = "How well do you think that this program helped you?"
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.NumericUpDown2)
+        Me.GroupBox2.Location = New System.Drawing.Point(135, 6)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(121, 304)
+        Me.GroupBox2.TabIndex = 10
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Settings"
         '
-        'txtQuestion2
+        'NumericUpDown2
         '
-        Me.txtQuestion2.Location = New System.Drawing.Point(19, 127)
-        Me.txtQuestion2.Name = "txtQuestion2"
-        Me.txtQuestion2.Size = New System.Drawing.Size(100, 20)
-        Me.txtQuestion2.TabIndex = 6
+        Me.NumericUpDown2.Location = New System.Drawing.Point(6, 37)
+        Me.NumericUpDown2.Name = "NumericUpDown2"
+        Me.NumericUpDown2.Size = New System.Drawing.Size(109, 20)
+        Me.NumericUpDown2.TabIndex = 11
+        Me.NumericUpDown2.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
-        'txtNameInput
+        'Label5
         '
-        Me.txtNameInput.Location = New System.Drawing.Point(19, 187)
-        Me.txtNameInput.Name = "txtNameInput"
-        Me.txtNameInput.Size = New System.Drawing.Size(100, 20)
-        Me.txtNameInput.TabIndex = 8
-        '
-        'lblNameQ
-        '
-        Me.lblNameQ.Location = New System.Drawing.Point(16, 165)
-        Me.lblNameQ.Name = "lblNameQ"
-        Me.lblNameQ.Size = New System.Drawing.Size(546, 19)
-        Me.lblNameQ.TabIndex = 7
-        Me.lblNameQ.Text = "What is your full name?"
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(37, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Steps:"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(583, 380)
+        Me.ClientSize = New System.Drawing.Size(588, 383)
         Me.Controls.Add(Me.TabControl1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "The CodeMaker v1.2"
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Character, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -415,7 +525,20 @@ Partial Class Form1
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -444,14 +567,21 @@ Partial Class Form1
     Friend WithEvents btnAddPod1 As Button
     Friend WithEvents TextPod1 As TextBox
     Friend WithEvents Pod1 As ListBox
-    Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents btnClearSurv As Button
-    Friend WithEvents btnSubmit As Button
-    Friend WithEvents lblQuestion1 As Label
-    Friend WithEvents Question1Response As TextBox
     Friend WithEvents fdPathLocationPicker As OpenFileDialog
-    Friend WithEvents txtQuestion2 As TextBox
-    Friend WithEvents Question2 As Label
-    Friend WithEvents txtNameInput As TextBox
-    Friend WithEvents lblNameQ As Label
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents NumericUpDown2 As NumericUpDown
 End Class
