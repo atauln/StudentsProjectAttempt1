@@ -1,4 +1,5 @@
 ﻿Public Class Form1
+#Region "Variables"
     Dim CharacterX = Nothing
     Dim CharacterY = Nothing
     Dim Steps = 10
@@ -20,7 +21,9 @@
 
     Dim NameofValue5 = ""
     Dim NameofValue6 = ""
-
+    Dim HIsVIs As Boolean = True
+#End Region
+#Region "Necessary"
     Sub RefreshCharacterLocation()
         CharacterX = Character.Location.X
         CharacterY = Character.Location.Y
@@ -61,7 +64,8 @@
             RefreshTextBox("")
         End If
     End Sub
-
+#End Region
+#Region "COMMAND"
     Private Sub Command_Btn_Click(sender As Object, e As EventArgs) Handles Command_Btn.Click
 
         If TextBox1.Text = "MoveUp()" Then
@@ -161,7 +165,8 @@
         End If
 
     End Sub
-
+#End Region
+#Region "PODS"
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         TextBox1.Text = ListBox1.SelectedItem.ToString()
     End Sub
@@ -194,7 +199,8 @@
     Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles NamePod1.TextChanged
         NameofValue6 = NamePod1.Text
     End Sub
-
+#End Region
+#Region "Personalization"
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         fdPathLocationPicker.ShowDialog()
         Character.ImageLocation = System.IO.Path.GetFullPath(fdPathLocationPicker.FileName)
@@ -239,4 +245,23 @@
     Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
         Character.Image = PictureBox11.Image
     End Sub
+
+    Private Sub NumericUpDown2_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown2.ValueChanged
+        Steps = NumericUpDown2.Value
+    End Sub
+
+    Private Sub btnHistory_Click(sender As Object, e As EventArgs) Handles btnHistory.Click
+        If HIsVIs = True Then
+            HIsVIs = False
+            btnHistory.BackColor = Color.Red
+            ListBox1.Visible = False
+            Exit Sub
+        Else
+            HIsVIs = True
+            btnHistory.BackColor = Color.Lime
+            ListBox1.Visible = True
+            Exit Sub
+        End If
+    End Sub
+#End Region
 End Class
