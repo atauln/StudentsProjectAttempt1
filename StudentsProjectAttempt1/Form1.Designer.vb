@@ -65,9 +65,9 @@ Partial Class Form1
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.fdPathLocationPicker = New System.Windows.Forms.OpenFileDialog()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.fdPathLocationPicker = New System.Windows.Forms.OpenFileDialog()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -521,10 +521,6 @@ Partial Class Form1
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
         '
-        'fdPathLocationPicker
-        '
-        Me.fdPathLocationPicker.FileName = "OpenFileDialog1"
-        '
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.TextBox2)
@@ -547,6 +543,10 @@ Partial Class Form1
         Me.TextBox2.TabIndex = 0
         Me.TextBox2.Text = resources.GetString("TextBox2.Text")
         '
+        'fdPathLocationPicker
+        '
+        Me.fdPathLocationPicker.FileName = "OpenFileDialog1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -555,7 +555,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TabControl1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
-        Me.Text = "The CodeMaker v1.2"
+        Me.Text = "The Automater 2000"
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Character, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
